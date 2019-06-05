@@ -9,7 +9,7 @@
   "keywords": [
     "javascript"
   ],
-  "author": "[aul hayes",
+  "author": "Paul hayes",
   "license": "ISC",
   "devDependencies": {
     "babel-eslint": "^10.0.1",
