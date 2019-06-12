@@ -1,15 +1,12 @@
 export const isPangram = string => {
-  // Convert the incoming string to lowercase
+  const ALPHABET_SIZE = 26;
+  // Convert the incoming string to lowercase +
   // Strip it of anything that isnt a letter
-  const strToCheck = string
-    .toLowerCase()
-    .replace(/[^A-Za-z]/g, '')
-    .split('');
+  const strToCheck = string.toLowerCase().replace(/[^a-z]/g, '');
 
-  // Using the spread operator you can return an array with only
-  // unique characters, as we are testing for a pangram then this
-  // new array should equal 26 otherwise we are missing a letter
-  const distinctLetters = [...new Set(strToCheck)];
-  if (distinctLetters.length === 26) return true;
-  return false;
+  // A Set can only contain unique values, so by
+  // checking the size of the set from the string
+  // we can see if it has all 26 letters
+  const distinctLetters = new Set(strToCheck).size;
+  return distinctLetters === ALPHABET_SIZE;
 };
